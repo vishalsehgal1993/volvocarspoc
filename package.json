@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/vishalsehgal1993/volvocarspoc/issues"
   },
-  "homepage": "https://github.com/vishalsehgal1993/volvocarspoc#readme"
+  "homepage": "https://github.com/vishalsehgal1993/volvocarspoc#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.6.0"
+  }
 }

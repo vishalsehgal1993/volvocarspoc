@@ -1,0 +1,16 @@
+{
+    "dev":{
+        "PORT":3000,
+        "DIALECT":"",
+        "USERNAME":"",
+        "PASSWORD":"",
+        "PARAMS":""
+    },
+    "prod":{
+        "PORT":3000,
+        "DIALECT":"",
+        "USERNAME":"",
+        "PASSWORD":"",
+        "PARAMS":""
+    }
+}
