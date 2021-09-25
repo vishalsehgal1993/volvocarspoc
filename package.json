@@ -1,0 +1,19 @@
+{
+  "name": "volvocarspoc",
+  "version": "1.0.0",
+  "description": "Volvo Cars POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalsehgal1993/volvocarspoc.git"
+  },
+  "author": "Vishal Sehgal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalsehgal1993/volvocarspoc/issues"
+  },
+  "homepage": "https://github.com/vishalsehgal1993/volvocarspoc#readme"
+}
