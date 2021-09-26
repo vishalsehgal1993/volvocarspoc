@@ -1,0 +1,22 @@
+{
+    "users":[{
+        "name":"Vishal Sehgal",
+        "email":"vishalsehgal.skrm@gmail.com",
+        "phone":1234567890
+    },
+    {
+        "name":"Nicole Emanuel",
+        "email":"nicolemanuel.900@yahoo.com",
+        "phone":1342568790
+    }],
+    "vehicles":[{
+        "vehicleMake":"2019",
+        "vehicleModel":"XC90",
+        "vin":"VCXC90"
+    },
+    {
+        "vehicleMake":"2017",
+        "vehicleModel":"S90",
+        "vin":"VCS90"
+    }]
+}
