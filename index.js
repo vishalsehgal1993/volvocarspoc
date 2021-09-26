@@ -74,7 +74,7 @@ app.on('listening', onListening);
 
 //This route will be used as an endpoint to interact with Graphql,All queries will go through this route. 
 app.use(
-    '/graphql',
+    `${configs.dev.BASE_CONTEXT}${configs.dev.VERSION}${configs.dev.API_ORCHESTRATION_ROUTE}`,
     graphqlHttp({
       schema: graphQlSchema,
       rootValue: graphQlResolvers,

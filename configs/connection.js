@@ -46,7 +46,7 @@ const connectToDb = async (app,port) => {
   })
   .then((data)=>{
     app.listen(port, () => {
-      console.log(color.green(`Application Running Listening on port: ${port}`));
+      console.log(color.green(`Application Running Please Open: http://${config.dev.HOST_NAME}:${port}${config.dev.BASE_CONTEXT}${config.dev.VERSION}${config.dev.API_ORCHESTRATION_ROUTE}`));
     });  
   })
 }

@@ -5,7 +5,11 @@
         "USERNAME":"volvo:",
         "PASSWORD":"EvqaKQeMN7YyZi5p",
         "HOST":"@poc.u4bbu.mongodb.net/myFirstDatabase",
-        "PARAMS":"?retryWrites=true&w=majority"
+        "PARAMS":"?retryWrites=true&w=majority",
+        "BASE_CONTEXT":"/api/version",
+        "API_ORCHESTRATION_ROUTE":"/bookings",
+        "VERSION":"/1",
+        "HOST_NAME":"localhost"
     },
     "prod":{
         "PORT":3000,
@@ -13,6 +17,10 @@
         "USERNAME":"volvo:",
         "PASSWORD":"EvqaKQeMN7YyZi5p",
         "HOST":"@poc.u4bbu.mongodb.net/myFirstDatabase",
-        "PARAMS":"?retryWrites=true&w=majority"
+        "PARAMS":"?retryWrites=true&w=majority",
+        "BASE_CONTEXT":"/api/version",
+        "API_ORCHESTRATION_ROUTE":"/bookings",
+        "VERSION":"/1",
+        "HOST_NAME":"localhost"
     }
 }
