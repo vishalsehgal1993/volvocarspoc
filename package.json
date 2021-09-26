@@ -4,7 +4,7 @@
   "description": "Volvo Cars POC",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/vishalsehgal1993/volvocarspoc#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.6.0"
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "mongoose": "^6.0.7"
   }
 }

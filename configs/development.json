@@ -1,16 +1,18 @@
 {
     "dev":{
         "PORT":3000,
-        "DIALECT":"",
-        "USERNAME":"",
-        "PASSWORD":"",
-        "PARAMS":""
+        "DIALECT":"mongodb+srv://",
+        "USERNAME":"volvo:",
+        "PASSWORD":"EvqaKQeMN7YyZi5p",
+        "HOST":"@poc.u4bbu.mongodb.net/myFirstDatabase",
+        "PARAMS":"?retryWrites=true&w=majority"
     },
     "prod":{
         "PORT":3000,
-        "DIALECT":"",
-        "USERNAME":"",
-        "PASSWORD":"",
-        "PARAMS":""
+        "DIALECT":"mongodb+srv://",
+        "USERNAME":"volvo:",
+        "PASSWORD":"EvqaKQeMN7YyZi5p",
+        "HOST":"@poc.u4bbu.mongodb.net/myFirstDatabase",
+        "PARAMS":"?retryWrites=true&w=majority"
     }
 }
