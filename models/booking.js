@@ -4,13 +4,17 @@ const Schema = mongoose.Schema;
 
 const bookingSchema = new Schema(
   {
-    event: {
-      type: Schema.Types.ObjectId,
-      ref: 'Event'
+    scheduledTime: {
+      type: String,
+      required: true
     },
-    user: {
+    userID: {
       type: Schema.Types.ObjectId,
       ref: 'User'
+    },
+    vin: {
+      type: Schema.Types.ObjectId,
+      ref: 'Vehicle'
     }
   },
   { timestamps: true }
