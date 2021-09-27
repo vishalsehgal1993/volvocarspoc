@@ -15,9 +15,12 @@ module.exports = {
         throw new Error('Invalid Car Details');
       }
       const validateTime = validateTimeSlots(args.scheduledTime);
-      console.log("validateTime is:", validateTime);
       if(!validateTime){
         throw new Error('Invalid Time Slots or Slots Unavailable');
+      }
+      const checkCounts = (await Booking.find(args)).length;
+      if(checkCounts>=2){
+        throw new Error('All Time Slots are Booked Please Book Other Date Time Values');
       }
       const bookings = new Booking({
         userID: args.userID,
@@ -25,15 +28,18 @@ module.exports = {
         vin:args.vin
       });
       const result = await bookings.save();
-      return { ...result._doc, password: null, _id: result._id };
+      return result;
     } catch (err) {
       throw err;
     }
   },
   cancelBooking: async args => {
     try {
-      const booking = await Booking.findById(args.bookingId);
-      await Booking.deleteOne({ _id: args.bookingId });
+      const booking = await Booking.findById(args._id);
+      if(!booking || booking === null || booking === undefined){
+        throw new Error('Bookings Does Not exists.');
+      }
+      const recDeleted = await Booking.deleteOne(booking);
       return booking;
     } catch (err) {
       throw err;

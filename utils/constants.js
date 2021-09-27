@@ -11,7 +11,6 @@ function validateTimeSlots(dateTimes){
     }
     function validateWokingTimeSlots(){
         if((hh >= startDateTime && hh <= endDateTime) && (mm >= 0 && mm <= 60) && (ss >= 0 && mm <= 60)){
-            console.log("flgged and hh is:", hh , mm , ss);
             flgged = true;
         }
         else{

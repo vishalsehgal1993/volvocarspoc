@@ -36,7 +36,7 @@ type RootQuery {
 
 type RootMutation {
     bookings(userID: ID!,scheduledTime:String!,vin:String!): Booking!
-    cancelBooking(bookingId: ID!): Booking!
+    cancelBooking(_id: ID!): Booking!
 }
 
 schema {
