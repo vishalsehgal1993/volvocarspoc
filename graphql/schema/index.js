@@ -31,7 +31,7 @@ input BookingInput {
 }
 
 type RootQuery {
-    bookings: [Booking!]!
+  bookingList(scheduledTime:String!): Booking!
 }
 
 type RootMutation {

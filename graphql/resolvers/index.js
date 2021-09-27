@@ -44,5 +44,16 @@ module.exports = {
     } catch (err) {
       throw err;
     }
+  },
+  bookingList: async args => {
+    try {
+      const booking = await Booking.find(args);
+      if(!booking || booking === null || booking === undefined || booking.length === undefined || booking.length == 0){
+        throw new Error('Bookings Does Not exists.');
+      }
+      return booking;
+    } catch (err) {
+      throw err;
+    }
   }
 };
