@@ -1,12 +1,47 @@
+import json
+import boto3
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, Depends, HTTPException
+from botocore.exceptions import ClientError
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from mangum import Mangum
 
 from .db import get_pool, close_pool
 
+SECRET_NAME = "my-fastapi-secret"
+AWS_REGION = "us-east-1"
+app_secrets = {}
+
+def get_aws_secret(secret_name: str, region_name: str) -> dict:
+    """Retrieves a secret from AWS Secrets Manager."""
+    try:
+        session = boto3.Session()
+        client = session.client(service_name='secretsmanager', region_name=region_name)
+        get_secret_value_response = client.get_secret_value(SecretId=secret_name)
+    except ClientError as e:
+        raise e
+    else:
+        if 'SecretString' in get_secret_value_response:
+            return json.loads(get_secret_value_response['SecretString'])
+        else:
+            raise ValueError("Secret is not a string type.")
 
 @asynccontextmanager
-async def lifespan(_: FastAPI):
+async def lifespan(app: FastAPI):
+    """Loads secrets into app_secrets dictionary at startup."""
+    print("Application starting up: Fetching secrets...")
+    try:
+        secrets = get_aws_secret(SECRET_NAME, AWS_REGION)
+        app_secrets.update(secrets)
+        print("Successfully loaded secrets.")
+    except Exception as e:
+        print(f"Error loading secrets: {e}")
+        raise RuntimeError("Failed to load secrets at startup.")
+
+    yield
+    print("Application shutting down.")
+
     # Open pool on startup (Lambda cold start) and close on shutdown (local dev)
     get_pool()
     try:
